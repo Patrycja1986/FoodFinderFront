@@ -1,0 +1,19 @@
+<!-- Page Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4 col-sm-6 mb-4" *ngFor="let item of restaurants">
+      <div class="card-deck">
+        <div class="card" style="padding:5px">
+          <a href="#"><img class="card-img-top" src="http://placehold.it/350x150" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a [routerLink]="[item.id]">{{item.restaurantName}}</a>
+            </h4>
+            <h6 class="card-subtitle mb-2 text-muted">{{item.restaurantStreetName + " "}} {{item.restaurantStreetNumber}}</h6>
+            <div class="card-text">....</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

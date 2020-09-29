@@ -1,0 +1,8 @@
+<p>Meal List is working {{restaurantId}}</p>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4 col-sm-6 mb-4" *ngFor="let item of meals">
+      <app-meal-details [mealItem]="item"></app-meal-details>
+    </div>
+  </div>
+</div>
