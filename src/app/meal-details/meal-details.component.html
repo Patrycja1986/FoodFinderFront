@@ -1,6 +1,5 @@
-<p>meal-details works!</p>
 <div class="card-deck">
-  <div class="card" style="padding:5px">
+  <div class="card" style="padding:5px" >
     <a href="#"><img class="card-img-top" src="http://placehold.it/350x150" alt=""></a>
     <div class="card-body">
       <h4 class="card-title">
@@ -8,7 +7,15 @@
       </h4>
       <h6 class="card-subtitle mb-2 text-muted">{{mealItem.mealPrice}}</h6>
       <div class="card-text">....</div>
-      <a class="btn btn-primary" (click)="handleAddToCart()">Order</a>
+      <div class="input-group mb-3">
+        <select class="custom-select" id="inputGroupSelect02">
+          <option selected>Choose quantity</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+      </div>
+      <a class="btn btn-primary" (click)="handleAddToCart()">Add to card</a>
     </div>
   </div>
 </div>

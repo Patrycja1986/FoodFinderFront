@@ -11,6 +11,10 @@ import { HomeComponent } from './home/home.component';
 import { MealListComponent } from './meal-list/meal-list.component';
 import { OrderComponent } from './order/order.component';
 import { MealDetailsComponent } from './meal-details/meal-details.component';
+import {FormsModule} from '@angular/forms';
+import { LogInComponent } from './log-in/log-in.component';
+import { RegisterComponent } from './register/register.component';
+import { OrderItemComponent } from './order-item/order-item.component';
 
 @NgModule({
   declarations: [
@@ -22,12 +26,16 @@ import { MealDetailsComponent } from './meal-details/meal-details.component';
     MealListComponent,
     OrderComponent,
     MealDetailsComponent,
+    LogInComponent,
+    RegisterComponent,
+    OrderItemComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

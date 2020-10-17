@@ -1,4 +1,4 @@
-import {Component, Injectable, OnInit} from '@angular/core';
+import {Component, Injectable, OnInit, EventEmitter, Output} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ActivatedRoute} from '@angular/router';
 
@@ -11,6 +11,7 @@ export class MealListComponent implements OnInit {
 
   meals: any = [];
   restaurantId: any;
+/* @Output() mealSelectedToOrder: any = new EventEmitter<any>();*/
 
   constructor(private http: HttpClient, private route: ActivatedRoute) {
     this.restaurantId = route.snapshot.paramMap.get('id');
@@ -22,4 +23,10 @@ export class MealListComponent implements OnInit {
         console.log(data);
         this.meals = data;
       });
-}}
+}
+
+  // tslint:disable-next-line:typedef
+  /*onSelected(item: any) {
+    this.mealSelectedToOrder.emit(item);
+  }*/
+}

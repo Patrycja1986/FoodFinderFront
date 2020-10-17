@@ -1,5 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
 import {OrderService} from '../services/order.service';
+import {ActivatedRoute} from '@angular/router';
+import {HttpClient} from '@angular/common/http';
+import {catchError} from 'rxjs/operators';
 
 @Component({
   selector: 'app-meal-details',
@@ -8,14 +11,14 @@ import {OrderService} from '../services/order.service';
 })
 export class MealDetailsComponent implements OnInit {
   @Input() mealItem: any;
+  // tslint:disable-next-line:new-parens
+/* @Output() mealSelected: any = new EventEmitter<void>();*/
 
-  constructor(private orderService: OrderService) { }
-
-  ngOnInit(): void {
+  constructor(private http: HttpClient, private orderService: OrderService) {
   }
+  ngOnInit(): void {}
   // tslint:disable-next-line:typedef
-  handleAddToCart(){
-    this.orderService.sendProduct(this.mealItem);
+  handleAddToCart() {
+   this.orderService.addProductToCard(this.mealItem);
   }
-
 }
