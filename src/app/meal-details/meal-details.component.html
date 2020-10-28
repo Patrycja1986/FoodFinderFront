@@ -3,19 +3,18 @@
     <a href="#"><img class="card-img-top" src="http://placehold.it/350x150" alt=""></a>
     <div class="card-body">
       <h4 class="card-title">
-        <a>{{mealItem.mealName}}</a>
+        <a #name>{{mealItem.mealName}}</a>
       </h4>
       <h6 class="card-subtitle mb-2 text-muted">{{mealItem.mealPrice}}</h6>
       <div class="card-text">....</div>
       <div class="input-group mb-3">
-        <select class="custom-select" id="inputGroupSelect02">
-          <option selected>Choose quantity</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-        </select>
+        <div class="def-number-input number-input safari_only">
+          <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+          <input #quantity class="quantity" min="0" name="quantity" value="1" type="number">
+          <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+        </div>
       </div>
-      <a class="btn btn-primary" (click)="handleAddToCart()">Add to card</a>
+      <a class="btn btn-primary" (click)="handleAddToCart(quantity.value)">Add to card</a>
     </div>
   </div>
 </div>

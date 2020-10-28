@@ -14,7 +14,12 @@ import { MealDetailsComponent } from './meal-details/meal-details.component';
 import {FormsModule} from '@angular/forms';
 import { LogInComponent } from './log-in/log-in.component';
 import { RegisterComponent } from './register/register.component';
+import { SearchComponent } from './search/search.component';
+import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { OrderItemComponent } from './order-item/order-item.component';
+import { AnimationModuleComponent } from './popOver-animation-module/animation-module.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { PhotoGalleryComponentComponent } from './photo-gallery-component/photo-gallery-component.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +33,18 @@ import { OrderItemComponent } from './order-item/order-item.component';
     MealDetailsComponent,
     LogInComponent,
     RegisterComponent,
+    SearchComponent,
+    WelcomePageComponent,
     OrderItemComponent,
+    AnimationModuleComponent,
+    PhotoGalleryComponentComponent,
   ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
-        FormsModule
+        FormsModule,
+      BrowserAnimationsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
 import {Component, Injectable, OnInit, EventEmitter, Output} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ActivatedRoute} from '@angular/router';
+import {OrderItem} from '../order-item/order-item';
 
 @Component({
   selector: 'app-meal-list',

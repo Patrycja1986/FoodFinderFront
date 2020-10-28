@@ -1,15 +1,8 @@
-<!--<div class="container">
-  <div class="row">
-    <div class="col-xs-12 mb-4" >
-      <app-order-item *ngFor="let meal of orderedMeals" [mealItem]="meal"></app-order-item>
-      <p >Total: {{total}}</p>
-    </div>
-  </div>
-</div>-->
-<div class="container d-flex justify-content-center mt-100 mb-100">
+
+<div class="container d-flex justify-content-center mt-100 mb-100" >
   <div class="row">
     <div class="col-md-12">
-      <div class="card">
+      <div class="card" style="background-image: url('https://cdn.pixabay.com/photo/2016/11/29/01/52/wood-1866659__340.jpg') ;border-color: white">
         <div class="card-body">
           <div class="d-flex no-block">
             <h4 class="card-title">Your Order:<br></h4>
@@ -27,8 +20,16 @@
                 <th>Delete</th>
               </tr>
               </thead>
-              <tbody>
-                <app-order-item *ngFor="let meal of orderedMeals" [mealItem]="meal"></app-order-item>
+             <tbody>
+              <tr *ngFor="let meal of orderedMeals">
+                <td> {{meal.meal.mealName}}</td>
+                <td>{{meal.meal.mealPrice}}</td>
+                <td>{{meal.quantity}}</td>
+                <td>todo</td>
+                <td class="mt-10">
+                  <button class="badge badge-danger"><i class="fa fa-trash"></i> Delete</button>
+                </td>
+              </tr>
               </tbody>
             </table>
           </div>
@@ -38,7 +39,7 @@
                 <h3 class="m-b-0">Total:</h3>
               </div>
               <div class="ml-auto align-self-center">
-                <h2 class="text-success">{{total}}</h2>
+                <h2 class="text-success"></h2>
               </div>
             </div>
           </div>
@@ -47,3 +48,4 @@
     </div>
   </div>
 </div>
+

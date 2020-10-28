@@ -7,15 +7,22 @@ import {ActivatedRoute} from '@angular/router';
   providedIn: 'root'
 })
 export class OrderService {
-  subject = new Subject();
+  mealSubject = new Subject();
+  quantitySubject = new Subject();
   constructor(private http: HttpClient) {
   }
   // tslint:disable-next-line:typedef
-  addProductToCard(product){
-    this.subject.next(product);
+    addProductToCard(product, mealQuantity){
+    // @ts-ignore
+      this.mealSubject.next(product);
+      this.quantitySubject.next(mealQuantity);
   }
   // tslint:disable-next-line:typedef
-  getProduct(){
-    return this.subject.asObservable();
+  getMeal(){
+    return this.mealSubject.asObservable();
+  }
+  // tslint:disable-next-line:typedef
+  getQuantity(){
+    return this.quantitySubject.asObservable();
   }
 }

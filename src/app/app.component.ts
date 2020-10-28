@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,10 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  show = true;
-
+showHomeContent = true;
   // tslint:disable-next-line:typedef
-  toggle() {
-    this.show = !this.show;
+  closeHomeContent() {
+    return this.showHomeContent = false ;
   }
 }
